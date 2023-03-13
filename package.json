@@ -1,0 +1,83 @@
+{
+  "name": "qumran-monorepo",
+  "private": true,
+  "packageManager": "pnpm@7.28.0",
+  "description": "🚀 A modern, high-performance monorepo vue3 ui library!",
+  "keywords": [
+    "vue",
+    "vue3",
+    "monorepo",
+    "pnpm",
+    "turborepo",
+    "changesets",
+    "vite",
+    "vitest"
+  ],
+  "license": "MIT",
+  "author": "i7eo <admin@i7eo.com> (https://github.com/i7eo)",
+  "scripts": {
+    "preinstall": "node ./scripts/preinstall.mjs",
+    "postinstall": "simple-git-hooks",
+    "dev": "turbo run dev --parallel --continue",
+    "dev:doc": "turbo run build --filter=doc && turbo run dev --filter=doc",
+    "dev:playground": "turbo run build --filter=playground && turbo run dev --filter=playground",
+    "build": "turbo run build --filter=./packages/*",
+    "test": "turbo run test",
+    "clean": "run-s clean:**",
+    "clean:workspace": "turbo run clean",
+    "clean:cache": "turbo run clean:cache",
+    "clean:root-cache": "rimraf .turbo && rimraf pnpm-lock.yaml && rimraf node_modules",
+    "lint": "turbo run lint",
+    "format": "turbo run lint:prettier",
+    "commit": "czg",
+    "prerelease": "tsx ./scripts/prerelease.ts",
+    "changelog:gen": "tsx ./scripts/changesets/generate.ts",
+    "changelog:write": "tsx ./scripts/changesets/write.ts",
+    "changeset:publish": "tsx ./scripts/changesets/releases.ts",
+    "changeset:gen": "changeset"
+  },
+  "devDependencies": {
+    "@changesets/assemble-release-plan": "^5.2.3",
+    "@changesets/changelog-github": "^0.4.8",
+    "@changesets/cli": "^2.26.0",
+    "@changesets/config": "^2.3.0",
+    "@changesets/pre": "^1.0.14",
+    "@changesets/read": "^0.5.9",
+    "@changesets/types": "^5.2.1",
+    "@manypkg/get-packages": "^2.1.0",
+    "@types/inquirer": "^9.0.3",
+    "@types/jsdom": "^21.1.0",
+    "@types/node": "*",
+    "@types/prettier": "^2.7.2",
+    "@types/semver": "^7.3.13",
+    "@unconfig/commitlint-config": "latest",
+    "@unconfig/eslint-config": "latest",
+    "@unconfig/lint-staged-config": "latest",
+    "@unconfig/prettier-config": "latest",
+    "@unconfig/simple-git-hooks-config": "latest",
+    "@unconfig/stylelint-config": "latest",
+    "@unconfig/ts-config": "latest",
+    "@vitest/ui": "^0.29.2",
+    "inquirer": "^9.1.4",
+    "jsdom": "^21.1.0",
+    "npm-run-all": "^4.1.5",
+    "octokit": "^2.0.14",
+    "rimraf": "^4.3.0",
+    "semver": "^7.3.8",
+    "tsx": "^3.12.3",
+    "turbo": "^1.8.3",
+    "typescript": "^4.9.5",
+    "vitest": "^0.29.2"
+  },
+  "engines": {
+    "node": ">=18",
+    "pnpm": ">=7"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@algolia/client-search"
+      ]
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "extends": "@unconfig/ts-config/vite.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@eo-cli/*": [
+        "packages/*/src",
+        "packages/commands/*/src",
+        "packages/core/*/src",
+        "packages/models/*/src"
+      ]
+    },
+    "composite": true
+  },
+  "include": [
+    "**/vitest.config.*",
+    "packages/**/__tests__/**/*",
+    "packages/**/tests/**/*",
+    "packages/**/*",
+    "packages/**/*.json",
+    "packages/**/typings/**/*",
+    "typings/**/*"
+  ],
+  "exclude": ["node_modules", "**/dist", "**/*.md"]
+}
