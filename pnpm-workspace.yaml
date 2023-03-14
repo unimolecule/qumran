@@ -1,4 +1,3 @@
 packages:
-  - apps/*
-  - internals/*
-  - packages/*
+  - apps/**
+  - packages/**

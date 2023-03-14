@@ -1,0 +1,22 @@
+{
+  "extends": "@unconfig/ts-config/browser.vue3.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "dist"
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "packages/web/global.d.ts",
+    "typings/web/**/*"
+  ],
+  "exclude": [
+    "**/__tests__/**",
+    "**/tests/**",
+    "node_modules",
+    "**/dist",
+    "**/*.md"
+  ]
+}

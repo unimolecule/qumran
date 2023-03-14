@@ -1,0 +1,26 @@
+{
+  "extends": "@unconfig/ts-config/browser.vue3.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@qumran/*": ["packages/web/components/*/src"]
+    }
+  },
+  "include": [
+    "packages/web/**/*",
+    "packages/web/**/*.json",
+    "packages/web/**/typings/**/*",
+    "packages/web/global.d.ts",
+    "typings/web/**/*",
+    "packages/node/node-constants/src/**/*",
+    "packages/node/node-constants/package.json",
+    "packages/node/node-constants/typings/**/*"
+  ],
+  "exclude": [
+    "**/__tests__/**",
+    "**/tests/**",
+    "node_modules",
+    "**/dist",
+    "**/*.md"
+  ]
+}

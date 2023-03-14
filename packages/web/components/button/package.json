@@ -1,0 +1,61 @@
+{
+  "name": "@qumran/ui-button",
+  "version": "0.0.0",
+  "description": "🚀 Button component for Qumran UI!",
+  "keywords": [
+    "ui",
+    "vue",
+    "vue3",
+    "qumran ui",
+    "button",
+    "vitest",
+    "esbuild",
+    "monorepo"
+  ],
+  "license": "MIT",
+  "author": "i7eo <admin@i7eo.com> (https://github.com/i7eo)",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "exports": {
+    ".": {
+      "dev": "./src/index.ts",
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
+    },
+    "./*": "./*"
+  },
+  "sideEffects": false,
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "pnpm tsup --config build.config.ts && pnpm vue-tsc --declaration --emitDeclarationOnly",
+    "test": "vitest",
+    "lint": "run-s lint:**",
+    "lint:eslint": "TIMING=1 eslint \"*.{js,jsx,ts,tsx,md,json}\" --fix",
+    "lint:prettier": "prettier --write \"*.{js,ts,jsx,tsx,md,json}\"",
+    "clean": "run-p clean:**",
+    "clean:cache": "rimraf .turbo && rimraf dist",
+    "clean:deps": "rimraf node_modules"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.47"
+  },
+  "dependencies": {
+    "vue": "^3.2.47"
+  },
+  "devDependencies": {
+    "@types/node": "*",
+    "@vue/test-utils": "^2.2.7",
+    "esbuild": "^0.17.11",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^4.4.0",
+    "tsup": "^6.6.3",
+    "typescript": "^4.9.4",
+    "unplugin-vue": "^4.0.2",
+    "unplugin-vue-jsx": "^0.1.2",
+    "vue-tsc": "^1.2.0"
+  },
+  "engines": {
+    "node": ">=18",
+    "pnpm": ">=7"
+  }
+}

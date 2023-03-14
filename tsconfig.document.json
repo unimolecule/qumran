@@ -3,21 +3,15 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@eo-cli/*": [
-        "packages/*/src",
-        "packages/commands/*/src",
-        "packages/core/*/src",
-        "packages/models/*/src"
-      ]
+      "@qumran/*": ["packages/web/node/*/src"]
     },
     "composite": true
   },
   "include": [
-    "apps/document",
-    "apps/document/.vitepress",
-    "packages/**/*",
-    "packages/**/*.json",
-    "packages/**/typings/**/*",
-    "typings/**/*"
+    "packages/web/**/*",
+    "packages/web/**/*.json",
+    "packages/web/**/typings/**/*",
+    "packages/web/global.d.ts",
+    "typings/web/**/*"
   ]
 }
